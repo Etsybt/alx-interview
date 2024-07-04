@@ -1,19 +1,15 @@
 #!/usr/bin/python3
+"""
+Lockboxes
+"""
 
 
 def canUnlockAll(boxes):
     """
     Determines if all the boxes can be opened.
-
-    Args:
-        boxes (list of lists): A list where each element is
-        a list of keys contained in that box.
-
-    Returns:
-        bool: True if all boxes can be opened, False otherwise.
     """
     if not boxes or len(boxes) == 0:
-        return (False)
+        return False
 
     n = len(boxes)
     visited = [False] * n
@@ -27,4 +23,4 @@ def canUnlockAll(boxes):
                 visited[key] = True
                 queue.append(key)
 
-    return (all(visited))
+    return all(visited)
