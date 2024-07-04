@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def canUnlockAll(boxes):
     """
     Determines if all the boxes can be opened.
@@ -12,7 +13,7 @@ def canUnlockAll(boxes):
         bool: True if all boxes can be opened, False otherwise.
     """
     if not boxes or len(boxes) == 0:
-        return False
+        return (False)
 
     n = len(boxes)
     visited = [False] * n
@@ -26,4 +27,4 @@ def canUnlockAll(boxes):
                 visited[key] = True
                 queue.append(key)
 
-    return all(visited)
+    return (all(visited))
