@@ -20,7 +20,10 @@ def print_statistics(total_size, status_count):
 
 if __name__ == "__main__":
     pattern = re.compile(
-        r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - \[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d+\] "GET /projects/260 HTTP/1.1" (\d{3}) (\d+)$')
+        r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - '
+        r'\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d+\] '
+        r'"GET /projects/260 HTTP/1.1" (\d{3}) (\d+)$'
+    )
 
     line_counter = 0
     total_file_size = 0
