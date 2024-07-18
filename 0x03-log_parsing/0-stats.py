@@ -9,8 +9,8 @@ import re
 
 def print_statistics(total_size, status_count):
     """
-    Prints the total file size and the count
-    of each status code in ascending order
+    Prints the total file size and
+    the count of each status code in ascending order
     """
     print(f"File size: {total_size}")
     for status in sorted(status_count):
@@ -20,7 +20,7 @@ def print_statistics(total_size, status_count):
 
 if __name__ == "__main__":
     pattern = re.compile(
-        r'^\d{1, 3}\.\d{1, 3}\.\d{1, 3}\.\d{1, 3} - \[\d{4} -\d{2} -\d{2} \d{2}: \d{2}: \d{2}.\d +\] "GET / projects / 260 HTTP / 1.1" (\d{3}) (\d + )$')
+        r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - \[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d+\] "GET /projects/260 HTTP/1.1" (\d{3}) (\d+)$')
 
     line_counter = 0
     total_file_size = 0
