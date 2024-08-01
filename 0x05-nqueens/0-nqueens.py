@@ -2,7 +2,6 @@
 """
 0-nqueens
 """
-#!/usr/bin/python3
 import sys
 
 
@@ -23,6 +22,7 @@ def is_safe(board, row, col):
             return False
 
     return True
+
 
 def solve_nqueens_util(board, col):
     """
@@ -45,6 +45,7 @@ def solve_nqueens_util(board, col):
             board[i][col] = 0
 
     return res
+
 
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
