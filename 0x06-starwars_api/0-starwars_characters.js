@@ -19,14 +19,21 @@ request(url, (error, response, body) => {
   const film = JSON.parse(body);
   const characters = film.characters;
 
-  characters.forEach(characterUrl => {
-    request(characterUrl, (error, response, body) => {
+  const fetchCharacterNames = (index) => {
+    if (index === characters.length) {
+      return;
+    }
+
+    request(characters[index], (error, response, body) => {
       if (error) {
         console.error(error);
         return;
       }
       const character = JSON.parse(body);
       console.log(character.name);
+      fetchCharacterNames(index + 1);
     });
-  });
+  };
+
+  fetchCharacterNames(0);
 });
